@@ -1,0 +1,57 @@
+1. Jelasin Assesmentnya
+
+2. Editor yang saya pakai adalah Visual Studio Code
+
+3. Create Project Maven
+
+4. Masukkan Dependencies dari Maven Repositories pada file pom.xml
+    1. Selenium latest
+    2. Cucumber latest
+    3.Junit dari cucumber itu sendiri latest
+    4. Junit latest
+    5. slf4j simple provider version sudah settle
+
+5. Setelah udah cukup, agar nantinya mudah untuk changing version dari dependencies yang digunakan maka akan dilakukan parameterize (properties)
+
+6. Lalu saya akan set folder management yang biasa saya lakukan
+	1. folder resources src>test>resources
+	2. setelah itu di dalam folder resources saya akan membuat package config, drivers dan features
+
+7. Saya membutuhkan driver, maka kita akan download driver chrome lalu extract pada folder drivers
+
+8. Kemudian pada folder src>test> buat package runners dan stepDefinitions
+
+9. Pada bagian main>java buat package pages dan utilities
+
+10. Setelah semua sudah settle, lalu kita akan membuat features menggunakan gherkin (cucumber) untuk mempermudah menentukan page object, object modelnya dan agar rapih saya buat
+    sub folder lagi yaitu features>Login baru isinya adalah file LoginTest.feature
+
+11. Pada file LoginTest.feature define Step Definitionnya. Selesai membuat 2 Scenario dengan 2 Tag yang berbeda yaitu 1 Positive dan 1 Negative akan dibungkus oleh LoginFunctionallity
+    kemudian dari scenario berikut adalah Given kondisi awal ketika User ingin melakukan test dengan membuka Browser dan menuju URL yang akan ditest
+    lalu jelaskan seterusnya seperti yang sudah dilakukan secara Manual tadi
+    untuk Scenario Login Negative kurang lebih sama hanya beda di username dan validasi akhir
+
+12. Setelah Scenario udah dibuat, saya akan lanjut membuat pages-nya karena saya disini akan memakai object model dalam pembuatan scriptnya
+
+13. Jelasin src>main>java>pages>LoginPages. sampai buat fields selesai
+
+14. Saya akan membuat beberapa method-method pendukung, Keyword untuk memudahkan Script saya. buat Helpers/Keyword di folder src>main>java>utilities.
+    1. Saya membutuhkan waitForElement untuk make sure element ditunggu sampai waktu timeout yang telah ditentukan
+    2. Saya juga membutuhkan screenshoot untuk evidencenya testingnya
+    3. Terakhir mungkin method untuk membaca file config readernya
+
+15. Kemudian saya butuh config reader tempat menyimpan sebuah configan seperti baseUrl atau nantinya akan digunakan untuk daftar ip Database atau lainnya
+    buat (config.properties new file) dan masukan url baseUrl = 'urlnya'
+
+16. Lalu saya akan membuat method untuk membaca sebuah config file (balik lagi ke Helpers/Keyword)
+
+17. Buat folder screenshoots pada folder demo. (balik lagi ke Helpers/Keyword)
+
+18. Lanjut mengerjakan LoginPage (masuk ke file LoginPage.java)
+
+19. untuk Positive sudah selesai, lalu lanjut membuat Step Definitionnya (di folder stepDefinitions) dengan nama LoginSteps
+
+20. tambahkan perintah validasi (di file LoginPages.java)
+
+21. buat package Test Runners dalam src>test>java>runners
+
